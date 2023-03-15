@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #caf0f8;
+    --text-color: #03045e;
+    --nav-color: #023e8a;
+}
+
+body{
+    background-color: var(--bg-color);
+    animation: change-background 4s ease ;
+
+
+}
+
+.main{
+    display: flex;
+    background-color: var(--bg-color);
+}
+
+@keyframes change-color {
+    0% {
+      color: #f72585;
+    }
+    50% {
+      color: #b5179e;
+    }
+    100% {
+      color: #7209b7;
+    }
+  }
+
+h1{
+    animation: change-color 4s ease;
+}
+
+/* Nav Bar Section */
+header {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--text-color);
+}
+
+
+.h1 {
+    width: 140px;
+    color: var(--text-color);
+
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: var(--nav-color);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li:hover{
+    transform: translateY(-5px);
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--text-color);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+
+/* About Me Section */
+#about {
+    padding: 80px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-left-col {
+    flex-basis: 35%;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-right-col {
+    flex-basis: 60%;
+}
+
+.about-me-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Professional Section */
+#professional {
+    padding: 80px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.professional-right-col {
+    flex-basis: 35%;
+}
+
+.professional-img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.professional-left-col {
+    flex-basis: 60%;
+}
+
+.professional-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.resumeButton{
+	background-color:#8cc9f0;
+	color: white;
+		appearance: none;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		border-radius: 8px;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 300;
+		height: 2.75em;
+		line-height: 2.75em;
+		min-width: 9.25em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: none;
+		white-space: nowrap;
+}
+
+
+/* Personal Section */
+#personal {
+    padding: 80px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.personal-left-col {
+    flex-basis: 35%;
+}
+
+.personal-img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.personal-right-col {
+    flex-basis: 60%;
+}
+
+.personal-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Contact Me Section */
+.contact-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 30px; 
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #a2d2ff;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* For Small Screens */
+@media only screen and (max-width: 600px){
+    nav ul, .h1{
+        display: grid;
+        flex: 1 1;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-me-heading, .professional-heading,
+    .personal-heading, .contact-heading{
+        font-size: 40px;
+    } 
+
+    .about-left-col, .about-right-col{
+        flex-basis: 100%;
+    }
+    
+    .about-left-col{
+        margin-bottom: 30px;
+    }
+    .about-right-col{
+        font-size: 14px;
+    }
+
+    .professional-left-col, .professional-right-col{
+        flex-basis: 100%;
+    }
+
+    .personal-left-col, .personal-right-col{
+        flex-basis: 100%;
+    }
+
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+}
+
+/* For Big Screens */
+@media only screen and (min-width: 992px){
+.section {
+    max-width:100%;
+    height:auto;
+}
+
+    .about-img {
+        width: 20%;
+        justify-content: right;
+    }
+
+    .professional-img{
+        width: 20%;
+        justify-content: right;
+    }
+
+    
+    .personal-img{
+        width: 20%;
+        justify-content: right;
+    }
+
+    .container{
+        display: grid;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
